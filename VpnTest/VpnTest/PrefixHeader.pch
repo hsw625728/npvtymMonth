@@ -1,0 +1,89 @@
+//
+//  PrefixHeader.pch
+//  VpnTest
+//
+//  Created by HANSHAOWEN on 17/3/29.
+//  Copyright © 2017年 mopellet. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#pragma mark - Header
+
+#import "MLBMacros.h"
+#import "Constants.h"
+
+#pragma mark - Categories
+
+#import "NSString+MLBUtilities.h"
+#import "UIColor+MLBUtilities.h"
+#import "UIView+Frame.h"
+//#import "UIImageView+MLBSDImageLoader.h"
+#import "UIImage+Common.h"
+
+#pragma mark - Framework
+
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <YLGIFImage/YLGIFImage.h>
+#import <YLGIFImage/YLImageView.h>
+#import <KMNavigationBarTransition/UIViewController+KMNavigationBarTransition.h>
+#import <GMCPagingScrollView/GMCPagingScrollView.h>
+#import "AAPullToRefresh.h"
+
+#define LOG_LEVEL_DEF ddLogLevel
+#import <CocoaLumberjack/CocoaLumberjack.h>
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+
+#import <JTSImageViewController/JTSImageViewController.h>
+
+typedef NS_ENUM(NSInteger, VPNSTATUE){
+    VPN_DISCONNECTED,
+    VPN_CONNECTING,
+    VPN_CONNECTED,
+    VPN_DISCONNECTING,
+};
+#import "AppDelegate.h"
+#pragma mark - NSEnum
+
+
+typedef NS_ENUM(NSUInteger, MLBActionType) {
+    MLBActionTypeDiary,
+    MLBActionTypePraise,
+    MLBActionTypeMore,
+};
+
+typedef NS_ENUM(NSUInteger, MLBReadType) {
+    MLBReadTypeEssay,
+    MLBReadTypeSerial,
+    MLBReadTypeQuestion,
+};
+
+typedef NS_ENUM(NSUInteger, MLBUserType) {
+    MLBUserTypeMe,
+    MLBUserTypeOthers,
+};
+
+typedef NS_ENUM(NSUInteger, MLBSearchType) {
+    MLBSearchTypeHome,
+    MLBSearchTypeRead,
+    MLBSearchTypeMusic,
+    MLBSearchTypeMovie,
+    MLBSearchTypeAuthor,
+};
+
+#pragma mark - Block
+
+typedef void(^CommonActionBlock)(void);
+
+#pragma mark - Other
+
+#import "MLBUIFactory.h"
+#import "MLBUtilities.h"
+#import "MLBHTTPRequester.h"
+#import "MLBTapImageView.h"
+#endif /* PrefixHeader_pch */
